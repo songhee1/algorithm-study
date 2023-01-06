@@ -8,6 +8,6 @@ for i in range(0,3):
             N_list[j]=least_num
             N_list[i]=tmp
             least_num=N_list[i]
-for i in N_list:
+for i in N_list: 
     print(i, end=" ")
 

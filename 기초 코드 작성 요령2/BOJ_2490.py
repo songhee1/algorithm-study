@@ -3,7 +3,7 @@ for i in range(3):
     N=list(map(int,input().split()))
     for item in N:
         if item==0:
-            aSum+=1
+            aSum+=1 
     
     if aSum==1:
         print('A')
