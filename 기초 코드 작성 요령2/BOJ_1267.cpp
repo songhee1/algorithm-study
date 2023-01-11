@@ -4,53 +4,19 @@ int main()
 {
     ios::sync_with_stdio(0);
     cin.tie(0);
-    int N, a[20], realA[20], totalSumYongSik, totalSumMinSik;
-    totalSumYongSik = 0;
-    totalSumMinSik = 0;
+    int N, callingTerm;
+    int yongsik = 0, minsik = 0;
     cin >> N;
     for (int i = 0; i < N; i++)
     {
-        cin >> a[i];
-        realA[i] = a[i];
-        while (true)
-        {
-            if (a[i] < 30)
-            {
-                totalSumYongSik += 10;
-                break;
-            }
-            else if (a[i] >= 30)
-            {
-                totalSumYongSik += 20;
-                a[i] -= 59;
-                if (a[i] < 0)
-                    break;
-            }
-        }
-        a[i] = realA[i];
-        while (true)
-        {
-            if (a[i] < 60)
-            {
-                totalSumMinSik += 15;
-                break;
-            }
-            else if (a[i] >= 60)
-            {
-                totalSumMinSik += 30;
-                a[i] -= 119;
-                if (a[i] < 0)
-                    break;
-            }
-        }
+        cin >> callingTerm;
+        yongsik += (callingTerm / 30 + 1) * 10;
+        minsik += (callingTerm / 60 + 1) * 15;
     }
-    if (totalSumYongSik > totalSumMinSik)
-        cout << "M"
-             << " " << totalSumMinSik;
-    else if (totalSumYongSik < totalSumMinSik)
-        cout << "Y"
-             << " " << totalSumYongSik;
+    if (yongsik > minsik)
+        cout << 'M' << " " << minsik;
+    else if (yongsik < minsik)
+        cout << 'Y' << " " << yongsik;
     else
-        cout << "Y M"
-             << " " << totalSumMinSik;
+        cout << "Y M " << minsik;
 }
