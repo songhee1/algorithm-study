@@ -15,7 +15,7 @@ int main()
     for (int i = 0; i < 10; i++)
     {
         cin >> a >> b;
-        revese(begin(cards) + a, end(cards) + b)
+        reverse(begin(cards) + a, end(cards) + b)
     }
 
     for (int i = 1; i < 21; i++)
