@@ -36,8 +36,11 @@ int main()
         }
         else
         {
-            t--;
-            t = L.erase(t);
+            if (t != L.begin())
+            {
+                t--;
+                t = L.erase(t);
+            }
         }
     }
     for (auto i : L)
