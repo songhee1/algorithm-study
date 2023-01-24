@@ -55,30 +55,30 @@ int main()
 
     while (N--)
     {
-        char command[10];
+        string command;
         cin >> command;
-        if (strcmp(command, "push") == 0)
+        if (command == "push")
         {
             int num;
             cin >> num;
             arrayInt[pos] = num;
             pos++;
         }
-        else if (strcmp(command, "top") == 0)
+        else if (command == "top")
         {
             if (pos != 0)
                 cout << arrayInt[pos - 1] << "\n";
             else
                 cout << -1 << "\n";
         }
-        else if (strcmp(command, "empty") == 0)
+        else if (command == "empty")
         {
             if (pos == 0)
                 cout << 1 << '\n';
             else
                 cout << 0 << "\n";
         }
-        else if (strcmp(command, "size") == 0)
+        else if (command == "size")
             cout << pos << "\n";
         else
         {
