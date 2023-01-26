@@ -3,9 +3,8 @@
 using namespace std;
 
 char outputArray[10000000];
-char outputArray2[10000000];
 int pos;
-int pos2;
+char yn = 'y';
 int main()
 {
     ios::sync_with_stdio(0);
@@ -40,32 +39,23 @@ int main()
         }
         else if (S.top() > num)
         {
-            fill(outputArray, outputArray + 10000000, 0);
+            yn = 'n';
         }
 
         S.pop();
         outputArray[pos] = '-';
         pos++;
     }
-
-    int nums = 0;
-    for (auto i : outputArray)
+    if (yn == 'y')
     {
-
-        if (i != 0)
+        for (auto i : outputArray)
         {
-            outputArray2[pos2] = i;
-            pos2++;
-            nums++;
+            if (i != 0)
+                cout << i << '\n';
         }
-    }
-    if (nums == 0)
-    {
-        cout << "NO";
     }
     else
     {
-        for (auto i : outputArray2)
-            cout << i << '\n';
+        cout << "NO";
     }
 }
