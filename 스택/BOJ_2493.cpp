@@ -12,36 +12,24 @@ int main()
     {
         int num;
         cin >> num;
-        if (S1.empty())
-        {
+        if(i==1) {
             S1.push(num);
-            cout << 0 << ' ';
+            cout<<0<<' ';
         }
-        else
-        {
+        else{
+            while(num>S1.top()){
+                S2.push(S1.top());
+                S1.pop();
+                while(S1.empty()){
+                    while(S2.size()){
+                        S1.push(S2.top());
+                        S2.pop();
+                    }
+                    break;
+                }
+            }
             
-            if (S1.top() > num)
-            {
-                cout << N - 1 << ' ';
-                while (S2.size())
-                {
-                    S1.push(S2.top());
-                    S2.pop();
-                }
-            }
-            else
-            {
-                if (S1.size() != 1)
-                {
-                    S2.push(S1.top());
-                    S1.pop();
-                }
-                else
-                {
-                    S1.push(num);
-                    cout << 0 << ' ';
-                }
-            }
+            S1.push(num);
         }
     }
 }
