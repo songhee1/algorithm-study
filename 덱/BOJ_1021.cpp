@@ -16,30 +16,41 @@ int main()
     {
         int num;
         cin >> num;
-        auto idx = find(Q.begin(), Q.end(), num);
         int idxNum;
         for (int i = 0; i < N; i++)
         {
-            if (*idx == num)
+            if (Q[i] == num)
             {
                 idxNum = i;
-            }
-        }
-        while (1)
-        {
-            if (idxNum == 0)
-            {
-                Q.pop_front();
                 break;
             }
-            else
-            {
+        }
 
-                if (Q.size() - idxNum > idxNum)
+        if (Q.size() - idxNum > idxNum)
+        {
+            while (1)
+            {
+                if (Q.front() == num)
+                {
+                    Q.front();
+                    break;
+                }
+                else
                 {
                     Q.push_back(Q.front());
                     Q.pop_front();
                     n++;
+                }
+            }
+        }
+        else
+        {
+            while (1)
+            {
+                if (Q.front() == num)
+                {
+                    Q.front();
+                    break;
                 }
                 else
                 {
