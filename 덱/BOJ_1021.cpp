@@ -54,7 +54,7 @@ int main()
                 }
                 else
                 {
-                    Q.push_front(Q.end());
+                    Q.push_front(Q.back());
                     Q.pop_back();
                     n++;
                 }

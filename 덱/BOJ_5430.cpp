@@ -1,7 +1,6 @@
 #include <iostream>
 #include <deque>
 #include <string>
-#include <vector>
 using namespace std;
 
 int main()
@@ -25,20 +24,17 @@ int main()
 
         // 배열에 들어가는 정수들 ex. [1,2,3,4]
         cin >> array;
-
+   char a;
         //'[' 제거
         array.erase(array.begin());
         //']'제거
         array.erase(array.end() - 1);
 
         // 문자열에 들은 char형 정수들 Q에 push
-        for (auto i : array)
-        {
-            if (i != ',')
-            {
-                Q.push_back(i);
-            }
-        }
+        // while(getline(ss,a,',')){
+        //     cout<<a;
+        //     Q.push_back(a);
+        // }
         // 이터레이터를 맨 뒤 원소로 고정
         auto it = Q.end() - 1;
         // 함수에 따라 동작
