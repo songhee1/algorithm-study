@@ -1,39 +1,47 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <deque>
+#include <algorithm>
 using namespace std;
 
-void parse(string& tmp, deque<int>& d){
+void parse(string &tmp, deque<int> &d)
+{
   int cur = 0;
-  for(int i = 1; i+1 < tmp.size(); i++)
+  for (int i = 1; i + 1 < tmp.size(); i++)
   {
-    if(tmp[i] == ','){
+    if (tmp[i] == ',')
+    {
       d.push_back(cur);
       cur = 0;
     }
-    else{
+    else
+    {
       cur = 10 * cur + (tmp[i] - '0');
     }
   }
-  if(cur != 0)
+  if (cur != 0)
     d.push_back(cur);
 }
 
-void print_result(deque<int>& d){
+void print_result(deque<int> &d)
+{
   cout << '[';
-  for(int i = 0; i < d.size(); i++)
+  for (int i = 0; i < d.size(); i++)
   {
     cout << d[i];
-    if(i+1 != d.size())
+    if (i + 1 != d.size())
       cout << ',';
   }
   cout << "]\n";
 }
 
 int t;
-int main(){
+int main()
+{
   ios::sync_with_stdio(0);
   cin.tie(0);
   cin >> t;
-  while(t--){
+  while (t--)
+  {
     deque<int> d;
     int rev = 0;
     int n;
@@ -43,23 +51,29 @@ int main(){
     cin >> n;
     cin >> tmp;
     parse(tmp, d);
-    for(char c : query)
+    for (char c : query)
     {
-      if(c == 'R')
+      if (c == 'R')
         rev = 1 - rev;
-      else{
-        if(d.empty()){
+      else
+      {
+        if (d.empty())
+        {
           isWrong = true;
           break;
         }
-        if(!rev) d.pop_front();
-        else d.pop_back();
+        if (!rev)
+          d.pop_front();
+        else
+          d.pop_back();
       }
     }
-    if(isWrong)
+    if (isWrong)
       cout << "error\n";
-    else{
-      if(rev) reverse(d.begin(), d.end());
+    else
+    {
+      if (rev)
+        reverse(d.begin(), d.end());
       print_result(d);
     }
   }
