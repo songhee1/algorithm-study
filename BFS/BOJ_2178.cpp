@@ -1,13 +1,14 @@
 #include <bits/stdc++.h>
 using namespace std;
 queue<pair<int, int>> q;
-bool vis[102][102];
-int board[102][102];
+string board[102];//0,1 저장
+bool vis[102][102];//방문여부 저장
+int dis[102][102];//거리 저장
 #define X first;
 #define Y second;
 int dx[4] = {1, 0, -1, 0};
 int dy[4] = {0, 1, 0, -1};
-int n, m, cans, num;
+int n, m, num, cans;
 int main()
 {
     ios::sync_with_stdio(0);
@@ -16,14 +17,15 @@ int main()
 
     for (int i = 0; i < n; i++)
     {
-        for (int j = 0; j < m; j++)
-        {
-            cin >> board[i][j];
-        }
+        cin >> board[i];
+    }
+    for(int i=0;i<n;i++){
+        fill(dis[i],dis[i]+m,-1);
     }
     
-    q.push({0,0});
-    vis[0][0]=1;
+    dis[0][0]=0;
+    q.push({0, 0});
+    vis[0][0] = 1;
     cans++;
     while (!q.empty())
     {
@@ -38,16 +40,11 @@ int main()
                 continue;
             if (vis[nx][ny] == 1 || board[nx][ny] == 0)
                 continue;
-
+      
             vis[nx][ny] = 1;
+            
             q.push({nx, ny});
             cans++;
-
-            if (nx == n && ny == m)
-            {
-                cout << cans;
-                return 0;
-            }
         }
     }
 }
