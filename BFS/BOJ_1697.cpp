@@ -1,45 +1,33 @@
 #include <bits/stdc++.h>
 int subin, sister;
-bool vis[100005];
-int dx[] = {1, -1, 2};
-int nx;
-int num;
+int dist[100005];
 using namespace std;
-queue<pair<int, int>> q;
+queue<int> q;
 int main()
 {
     ios::sync_with_stdio(0);
     cin.tie(0);
     cin >> subin >> sister;
-    q.push({num, subin});
-    vis[subin] = true;
-    cout << q.front().second << ": is entered\n";
+    q.push(subin);
+    dist[subin] = 0;
+    fill(dist, dist + 100005, -1);
 
     while (!q.empty())
     {
-        pair<int, int> cur = q.front();
+        int cur = q.front();
         q.pop();
-        cout << cur.first << ", " << cur.second << " : visited, lastingTime : " << num << "\n";
-        for (int dir = 0; dir < 3; dir++)
+        for (int nxt : {cur - 1, cur + 1, cur * 2})
         {
-            if (dir != 2)
-            {
-                nx = cur.second + dx[dir];
-            }
-            else
-                nx = cur.second * dx[dir];
-            if (nx < 0 || vis[nx] == true || nx > 100005)
+
+            if (nxt < 0 || dist[nxt] != -1 || nxt > 100000)
                 continue;
-            if (nx == sister)
+            q.push(nxt);
+            dist[nxt] = dist[cur] + 1;
+            if (nxt == sister)
             {
-                cout << num;
+                cout << dist[nxt];
                 return 0;
             }
-            num = cur.first + 1;
-
-            cout << nx << " : added\n";
-            q.push({num, nx});
-            vis[nx] = true;
         }
     }
 }
