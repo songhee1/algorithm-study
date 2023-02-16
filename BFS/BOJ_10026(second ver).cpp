@@ -40,8 +40,10 @@ int main()
                         int ny = cur.second + dy[dir];
                         if (nx < 0 || nx > N || ny < 0 || ny > N)
                             continue;
-                        if (vis[nx][ny] == true || board[nx][ny] != pill)
+                        if (vis[nx][ny] == true )
                             continue;
+                        if((pill=='R'|| pill=='G') && board[nx][ny]=='B') continue;
+                        if(pill=='B' && board[nx][ny]!='B') continue;
                         vis[nx][ny] = true;
                         q.push({nx, ny});
                     }
