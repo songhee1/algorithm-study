@@ -6,12 +6,9 @@ int dx[] = {1, 0, -1, 0};
 int dy[] = {0, 1, 0, -1};
 // 방 구조와 위치
 string board[1002];
-int R, C;
-// 방문여부
-bool vis[1002][1002];
-// 시간세기
 int dist1[1002][1002];
 int dist2[1002][1002];
+int R,C;
 
 int main()
 {
@@ -29,13 +26,11 @@ int main()
             cin >> board[i][j];
             if (board[i][j] == 'J')
             {
-                vis[i][j] = 1;
                 dist2[i][j] = 0;
                 q2.push({i, j});
             }
             else if (board[i][j] == 'F')
             {
-                vis[i][j] = 1;
                 dist1[i][j] = 0;
                 q.push({i, j});
             }
@@ -63,7 +58,6 @@ int main()
     {
         pair<int, int> cur = q2.front();
         q2.pop();
-        // cout << "test: " << cur.first << ", " << cur.second << "\n";
         for (int dir = 0; dir < 4; dir++)
         {
             int nx = cur.first + dx[dir];
@@ -73,7 +67,7 @@ int main()
                 cout << dist2[cur.first][cur.second] + 1;
                 return 0;
             }
-            if (board[nx][ny] == '#' || dist2[nx][ny] != -1 || dist2[nx][ny] >= dist1[nx][ny])
+            if (board[nx][ny] == '#' || (dist2[nx][ny] != -1 && dist2[nx][ny] < dist1[cur.first][cur.second]+1))
                 continue;
             dist2[nx][ny] = dist2[cur.first][cur.second] + 1;
             q2.push({nx, ny});
