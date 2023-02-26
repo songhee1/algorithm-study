@@ -1,10 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 int N, cnt;
-int arr[15][15];
-int isused1[40];
-int isused2[40];
-int isused3[40];
+int isused[20];
+int isused1[20];
+int isused2[35];
+int isused3[35];
 void func(int cur)
 {
     if (cur == N)
@@ -15,15 +15,20 @@ void func(int cur)
 
     for (int i = 0; i < N; i++)
     {
-        if (isused1[i] && isused2[i + cur] && isused3[cur - i + N - 1])
-            continue;
-        isused1[i] = 1;
-        isused2[i + cur] = 1;
-        isused3[cur - i + N - 1] = 1;
-        func(cur + 1);
-        isused1[i] = 0;
-        isused2[i + cur] = 0;
-        isused3[cur - i + N - 1] = 0;
+        if (isused1[cur]==0 && isused[i]==0 && isused2[i + cur]==0 && isused3[i - cur + N - 1]==0)
+        {
+            cout<<"func in"<<i<<" "<<cur<<"\n";
+            isused[i]=1;
+            isused1[cur] = 1;
+            isused2[i + cur] = 1;
+            isused3[i - cur+N-1] = 1;
+            func(cur + 1);
+            cout<<"func out"<<i<<" "<<cur<<"\n";
+            isused[i]=0;
+            isused1[cur] = 0;
+            isused2[i + cur] = 0;
+            isused3[i - cur+N-1] = 0;
+        }
     }
 }
 int main()
@@ -32,5 +37,5 @@ int main()
     cin.tie(0);
     cin >> N;
     func(0);
-    cout << cnt;
+    cout<<cnt;
 }
