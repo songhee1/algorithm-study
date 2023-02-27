@@ -16,17 +16,18 @@ void func(int k)
         cout << "\n";
         return;
     }
-    int tmp=0;
+    int tmp = 0;
     for (int i = 0; i < N; i++)
     {
-        if (!isused[i] && tmp!=arr[i])
+        if (tmp != arr[i])
         {
-            isused[i] = 1;
-            answer[k] = arr[i];
-            tmp=answer[k];
-            func(k + 1);
-            isused[i] = 0;
-            answer[k] = 0;
+            if (k == 0 || (k != 0 && answer[k - 1] <= arr[i]))
+            {
+                answer[k] = arr[i];
+                tmp = answer[k];
+                func(k + 1);
+                answer[k] = 0;
+            }
         }
     }
 }
