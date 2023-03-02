@@ -1,9 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
-int k, arr[15];
-int answer[8];
-int isused[15];
+int arr[15];
 int n[15];
+int k;
 int main()
 {
     ios::sync_with_stdio(0);
@@ -11,24 +10,21 @@ int main()
     while (1)
     {
         cin >> k;
-        if (k == 0)
-            break;
+        if(k==0) break;
         for (int i = 0; i < k; i++)
         {
             cin >> arr[i];
-            if (i > 5)
-            {
-                n[i] = 1;
-            }
-            else
-            {
-                n[i] = 0;
-            }
         }
-
+        for (int i = 0; i < k; i++)
+        {
+            if (i < 6)
+                n[i] = 0;
+            else
+                n[i] = 1;
+        }
         do
         {
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < k; i++)
             {
                 if (n[i] == 0)
                 {
@@ -36,6 +32,6 @@ int main()
                 }
             }
             cout << "\n";
-        } while (next_permutation(n, n + k))
+        } while (next_permutation(n, n + k));
     }
 }
