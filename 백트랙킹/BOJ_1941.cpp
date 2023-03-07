@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-string arr[10];
+char arr[5][5];
 int num[25];
 int answer[7];
 int isused[25];
@@ -50,22 +50,28 @@ void func(int k)
         {
             row = answer[i] / 5;
             column = answer[i] % 5;
+            cout << row << ',' << column << "\n";
             if (arr[row][column] == 'S')
-                snum++;
-        }
-        if (snum < 4)
-            return;
-        else if (snum >= 4)
-        {
-            for (int i = 0; i < 7; i++)
             {
-                row = answer[i] / 5;
-                column = answer[i] % 5;
-                cout << row << ", " << column << "\n";
+                snum++;
             }
-            cout << "\n";
-            return;
         }
+        return;
+        // if (snum < 4)
+        //     return;
+        // else if (snum >= 4)
+        // {
+        //     cout << "this is more than four\n";
+        //     return;
+        // for (int i = 0; i < 7; i++)
+        // {
+        //     row = answer[i] / 5;
+        //     column = answer[i] % 5;
+        //     cout << row << ", " << column << "\n";
+        // }
+        // cout << "\n";
+        // return;
+        // }
 
         // if (snum < 4)
         //     return;
@@ -117,13 +123,21 @@ int main()
     cin.tie(0);
     for (int i = 0; i < 5; i++)
     {
+        for (int j = 0; j < 5; j++)
+        {
 
-        cin >> arr[i];
+            cin >> arr[i][j];
+        }
     }
+
     for (int i = 0; i < 25; i++)
     {
         num[i] = i;
     }
+    for (int i = 0; i < 25; i++)
+    {
+        cout << num[i] << ", ";
+    }
     func(0);
-    cout << cnt;
+    // cout << cnt;
 }
