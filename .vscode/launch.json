@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "두더지굴",
+            "request": "launch",
+            "mainClass": "day2.두더지굴",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "lowerbound",
+            "request": "launch",
+            "mainClass": "lowerbound",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
             "name": "upperbound",
             "request": "launch",
             "mainClass": "upperbound",
