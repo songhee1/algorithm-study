@@ -6,6 +6,41 @@
     "configurations": [
         {
             "type": "java",
+            "name": "미로찾기",
+            "request": "launch",
+            "mainClass": "day3.미로찾기",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_1182",
+            "request": "launch",
+            "mainClass": "day3.BOJ_1182",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "NQueen",
+            "request": "launch",
+            "mainClass": "day3.NQueen",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_2178",
+            "request": "launch",
+            "mainClass": "day3.BOJ_2178",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_2667",
+            "request": "launch",
+            "mainClass": "day2.BOJ_2667",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
             "name": "두더지굴",
             "request": "launch",
             "mainClass": "day2.두더지굴",
