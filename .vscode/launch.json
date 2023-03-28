@@ -6,6 +6,62 @@
     "configurations": [
         {
             "type": "java",
+            "name": "최댓값",
+            "request": "launch",
+            "mainClass": "최댓값",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_2501",
+            "request": "launch",
+            "mainClass": "BOJ_2501",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_9506",
+            "request": "launch",
+            "mainClass": "BOJ_9506",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "약수합1",
+            "request": "launch",
+            "mainClass": "약수합1",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "미로찾기",
+            "request": "launch",
+            "mainClass": "미로찾기",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_1926",
+            "request": "launch",
+            "mainClass": "BOJ_1926",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "goolqueue",
+            "request": "launch",
+            "mainClass": "goolqueue",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "gool",
+            "request": "launch",
+            "mainClass": "gool",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
             "name": "미로찾기",
             "request": "launch",
             "mainClass": "day3.미로찾기",

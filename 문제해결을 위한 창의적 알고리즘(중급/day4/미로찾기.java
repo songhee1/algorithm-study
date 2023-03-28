@@ -1,7 +1,15 @@
-package day3;
 
 import java.io.*;
 import java.util.*;
+class Pair {
+    int x;
+    int y;
+
+    Pair(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+}
 
 public class 미로찾기 {
 
@@ -12,8 +20,7 @@ public class 미로찾기 {
     static int dy[] = { 0, 1, 0, -1 };
     static int nowX, nowY;
     static int minShortDistance=-1;
-    static boolean ishere;
-
+    static Queue<Pair> q = new LinkedList<>();
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
@@ -36,37 +43,34 @@ public class 미로찾기 {
 
         for (int i = 0; i < h; i++) {
             for (int j = 0; j < w; j++) {
-                if (array[i][j] == 'S') {
-                    BFS(i, j);
+                if (array[i][j] == 'S' && dist[i][j]==0) {
+                    bw.append(BFS(i, j)+"\n");
                 }
             }
         }
 
-        bw.append(minShortDistance + "\n");
         br.close();
         bw.close();
     }
 
-    static void BFS(int i, int j) {
-        Queue<Pair> queue = new LinkedList<>();
-        queue.add(new Pair(i, j));
+    static int BFS(int i, int j) {
+        q.add(new Pair(i, j));
 
-        while (!queue.isEmpty()) {
-            Pair cur = queue.poll();
+        while (!q.isEmpty()) {
+            Pair cur = q.poll();
             for (int dir = 0; dir < 4; dir++) {
                 nowX = cur.x + dx[dir];
-                nowY = cur.x + dx[dir];
+                nowY = cur.y + dy[dir];
                 if (CheckRange() == true && (array[nowX][nowY] == '.'|| array[nowX][nowY]=='G') && dist[nowX][nowY] == 0) {
                     dist[nowX][nowY] = dist[cur.x][cur.y] + 1;
-                    queue.add(new Pair(nowX, nowY));
+                    q.add(new Pair(nowX, nowY));
                     if(array[nowX][nowY]=='G') {
-                        minShortDistance=dist[nowX][nowY];
-                        return;
+                        return dist[nowX][nowY];
                     }
                 }
             }
         }
-        return;
+        return -1;
     }
 
     static boolean CheckRange() {
@@ -76,12 +80,3 @@ public class 미로찾기 {
     }
 }
 
-class Pair {
-    int x;
-    int y;
-
-    Pair(int x, int y) {
-        this.x = x;
-        this.y = y;
-    }
-}
