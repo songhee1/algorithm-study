@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "BOJ_1931",
+            "request": "launch",
+            "mainClass": "그리디.BOJ_1931",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_11047",
+            "request": "launch",
+            "mainClass": "그리디.BOJ_11047",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "고기잡이",
+            "request": "launch",
+            "mainClass": "day6.고기잡이",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "삼각화단",
+            "request": "launch",
+            "mainClass": "day5.삼각화단",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
             "name": "최댓값",
             "request": "launch",
             "mainClass": "최댓값",
