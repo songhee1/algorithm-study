@@ -18,7 +18,7 @@ public class BOJ_11047 {
         k=Integer.parseInt(ss[1]);
 
         coins=new int [10];
-        for(int i=0;i<N;i++){
+        for(int i=0;i<n;i++){
             coins[i]=Integer.parseInt(br.readLine());
         }
 
