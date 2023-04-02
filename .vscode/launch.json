@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "BOJ_2108",
+            "request": "launch",
+            "mainClass": "구현.BOJ_2108",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_1139",
+            "request": "launch",
+            "mainClass": "그리디.BOJ_1139",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
             "name": "BOJ_1026",
             "request": "launch",
             "mainClass": "그리디.BOJ_1026",
