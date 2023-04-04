@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "BOJ_1018",
+            "request": "launch",
+            "mainClass": "브루트스포스.BOJ_1018",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_2231amend",
+            "request": "launch",
+            "mainClass": "브루트스포스.BOJ_2231amend",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_17427",
+            "request": "launch",
+            "mainClass": "수학.BOJ_17427",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_10989",
+            "request": "launch",
+            "mainClass": "정렬.BOJ_10989",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
             "name": "BOJ_11005",
             "request": "launch",
             "mainClass": "구현.BOJ_11005",

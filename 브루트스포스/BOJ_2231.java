@@ -31,7 +31,7 @@ public class BOJ_2231 {
         for(int i=0;i<n;i++)    Arrays.fill(answer,b);
         
         for(double i=b;i<9;i++){
-            answer[0]
+            answer[0]=i;
             for(double j=1;j<9;j++){
                 if(i==b) j=b;
                 else{
@@ -39,7 +39,9 @@ public class BOJ_2231 {
                 }
                 for(double k=1;k<9;k++){
                     if(i==b) k=b;
-                                        
+                    else{
+                        answer[2]=k;
+                    }                   
                 }
             }
         }
