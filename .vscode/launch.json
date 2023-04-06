@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "BOJ_14888",
+            "request": "launch",
+            "mainClass": "브루트스포스.BOJ_14888",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_2309",
+            "request": "launch",
+            "mainClass": "브루트스포스.BOJ_2309",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_1463",
+            "request": "launch",
+            "mainClass": "브루트스포스.BOJ_1463",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
             "name": "BOJ_1018",
             "request": "launch",
             "mainClass": "브루트스포스.BOJ_1018",
