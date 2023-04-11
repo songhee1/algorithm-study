@@ -26,7 +26,7 @@ public class BOJ_24262 {
         bw.close();
         br.close();
     }
-
+    //시간복잡도는 O(1)이 된다.
     //어떤 수가 와도 한번만 수행되기 때문에 1을 반환하게 된다. 어떤 값이 증감하는 식이 없기 때문
     static int MenOfPassion(int A[], int n) {
         count++;

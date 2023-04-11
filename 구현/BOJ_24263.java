@@ -22,7 +22,7 @@ public class BOJ_24263 {
         bw.close();
         br.close();
     }
-
+    //어떤 수가 오던지 상관없이 N까지 수행하고 나가기 때문에 O(N)이 되며, 따라서 차수는 1이 된다. 
     static int MenOfPassion(int A[], int n) {
         sum = 0;
         for (i = 1; i <= n; i++) {

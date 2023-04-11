@@ -14,6 +14,11 @@ public class BOJ_24264 {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+        /*
+         * 해결방법: 무슨 수가 오던지 간에, 실행횟수는 n*n이 되며, 다항식의 차수는 2가 된다.
+         * 여기서는 MenOfPassion함수값의 정확한 반환값을 원하는 것이 아니므로 짧게 작성하도록 주의해야한다.
+         */
         A = new int[500001];
         n = Long.parseLong(br.readLine());
         bw.append(MenOfPassion(A, n) + "\n");
