@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "BOJ_24313",
+            "request": "launch",
+            "mainClass": "수학.BOJ_24313",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_24267",
+            "request": "launch",
+            "mainClass": "구현.BOJ_24267",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_24266",
+            "request": "launch",
+            "mainClass": "구현.BOJ_24266",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
             "name": "BOJ_24265",
             "request": "launch",
             "mainClass": "구현.BOJ_24265",
