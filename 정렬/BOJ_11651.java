@@ -6,7 +6,10 @@ import java.util.*;
 public class BOJ_11651 {
     static int n;
     static int arr[][];
-
+    /*
+     * 방법 : Arrays.sort()+BufferedReader+StringBuilder
+     * 시간 : 776ms
+     */
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
@@ -22,9 +25,11 @@ public class BOJ_11651 {
         }
 
         Arrays.sort(arr, (e1, e2) -> {
+            //y좌표가 같으면 x좌표가 증가하는 순으로 정렬
             if (e1[1] == e2[1])
                 return e1[0] - e2[0];
             else 
+            //y좌표가 같지 않으면 y좌표가 증가하는 순으로 정렬
                 return e1[1] - e2[1];
             
 

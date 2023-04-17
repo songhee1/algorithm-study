@@ -8,8 +8,8 @@ public class BOJ_11650 {
     static int n, tmp[];
 
     /*
-     * 선택정렬 + BufferedReader + StringBuilder
-     * 시간 : 시간초과
+     * Arrays.sort() + Comparator 오버라이딩 + BufferedReader + StringBuilder
+     * 시간 : 
      * 0번째 인덱스 값 기준 정렬 후, 값이 같으면 1번째 인덱스 값 기준 정렬
      */
     public static void main(String[] args) throws Exception {
