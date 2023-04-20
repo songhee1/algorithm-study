@@ -10,8 +10,9 @@ public class BO_18870 {
     static boolean hasCameOut;
 
     /*
-     * 정렬
-     * -10
+     * Counting sorting + BufferedReader + StringBuilder + StringTokenizer + Vector(요소값 존재하는지 확인)
+     * 시간: 시간초과
+     * 
      */
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
