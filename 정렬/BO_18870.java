@@ -1,38 +1,63 @@
 package 정렬;
+
 import java.util.*;
 import java.io.*;
-public class BO_18870{
+
+public class BO_18870 {
     static int n;
     static int arr[][];
-    /*정렬
-     * -10 
+    static Vector<Integer> v = new Vector<>();
+    static boolean hasCameOut;
+
+    /*
+     * 정렬
+     * -10
      */
-    public static void main(String []args) throws Exception{
-        BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
-        StringBuilder sb= new StringBuilder();
+    public static void main(String[] args) throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringBuilder sb = new StringBuilder();
         StringTokenizer st;
 
-        n=Integer.parseInt(br.readLine());
-        arr=new int[n][2];
+        n = Integer.parseInt(br.readLine());
+        arr = new int[n][2];
 
-        String s=br.readLine();
-        st=new StringTokenizer(s);
-        for(int i=0;i<n;i++){
-            arr[i][0]=Integer.parseInt(st.nextToken());
-            arr[i][1]=0;
+        st = new StringTokenizer(br.readLine());
+        for (int i = 0; i < n; i++) {
+            arr[i][0] = Integer.parseInt(st.nextToken());
+            arr[i][1] = 0;
         }
-        
-        for(int i=0;i<n;i++){
-            for(int j=0;j<n;j++){
-                if(arr[i][0]==arr[j][0]) continue;
-                if(arr[i][0]>arr[j][0])
+
+        for (int i = 0; i < n; i++) {
+            v.clear();
+            for (int j = 0; j < n; j++) {
+                if (arr[i][0] == arr[j][0])
+                    continue;
+                if (arr[i][0] > arr[j][0]) {
+
+                    for (int k = 0; k < v.size(); k++) {
+                        if (v.get(k) == arr[j][0]) {
+                            hasCameOut = true;
+                            break;
+                        }
+                    }
+                    if (hasCameOut){
+                        hasCameOut=false;
+                        continue;
+                       
+                    }
+
+                    v.add(arr[j][0]);
                     arr[i][1]++;
-                
+                }
+
             }
         }
 
-        for(int i=0;i<n;i++)
-         sb.append(arr[i][1]+" "
-        
+        for (int i = 0; i < n; i++)
+            sb.append(arr[i][1]).append(' ');
+
+        System.out.println(sb);
+        br.close();
+
     }
 }

@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "BO_18870",
+            "request": "launch",
+            "mainClass": "정렬.BO_18870",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
             "name": "BOJ_10814",
             "request": "launch",
             "mainClass": "정렬.BOJ_10814",
