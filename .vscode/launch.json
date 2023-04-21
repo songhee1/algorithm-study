@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "BOJ_10815",
+            "request": "launch",
+            "mainClass": "집합과맵.BOJ_10815",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_18870",
+            "request": "launch",
+            "mainClass": "정렬.BOJ_18870",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
             "name": "BO_18870",
             "request": "launch",
             "mainClass": "정렬.BO_18870",
