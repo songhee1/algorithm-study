@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "BOJ_1934",
+            "request": "launch",
+            "mainClass": "약수와배수.BOJ_1934",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_11478",
+            "request": "launch",
+            "mainClass": "집합과맵.BOJ_11478",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_1269",
+            "request": "launch",
+            "mainClass": "집합과맵.BOJ_1269",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_1764",
+            "request": "launch",
+            "mainClass": "집합과맵.BOJ_1764",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
             "name": "BOJ_7785",
             "request": "launch",
             "mainClass": "집합과맵.BOJ_7785",
