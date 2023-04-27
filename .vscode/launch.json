@@ -6,6 +6,48 @@
     "configurations": [
         {
             "type": "java",
+            "name": "BOJ_11050",
+            "request": "launch",
+            "mainClass": "조합론.BOJ_11050",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_10872",
+            "request": "launch",
+            "mainClass": "조합론.BOJ_10872",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_24723",
+            "request": "launch",
+            "mainClass": "조합론.BOJ_24723",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_15439",
+            "request": "launch",
+            "mainClass": "조합론.BOJ_15439",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_13909",
+            "request": "launch",
+            "mainClass": "약수와배수.BOJ_13909",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_17103",
+            "request": "launch",
+            "mainClass": "약수와배수.BOJ_17103",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
             "name": "BOJ_",
             "request": "launch",
             "mainClass": "약수와배수.BOJ_",
