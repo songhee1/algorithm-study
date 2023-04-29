@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "BOJ_2581",
+            "request": "launch",
+            "mainClass": "수학.BOJ_2581",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
             "name": "BOJ_10816",
             "request": "launch",
             "mainClass": "집합과맵.BOJ_10816",

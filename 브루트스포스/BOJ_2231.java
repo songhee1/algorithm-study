@@ -10,43 +10,23 @@ import java.io.*;
  */
 
 public class BOJ_2231 {
-    static int n;
-    static double answer[];
-    static double a, b;
+    static int n,numLength, startNum,sum;
 
     public static void main(String []args)throws Exception{
         BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw= new BufferedWriter(new OutputStreamWriter(System.out));
-        
-        String make1="";
+      
+        String make="";
         
         n=Integer.parseInt(br.readLine());
-
-        for(int i=1;i<=3;i++)make1+="1";
-        a=(int)(Math.log10(n)+1)+Integer.parseInt(make1);
-
-        b=Math.floor(n/a);
-        answer=new double [n];
-
-        for(int i=0;i<n;i++)    Arrays.fill(answer,b);
+        make+=n;
+        numLength=n/10;
         
-        for(double i=b;i<9;i++){
-            answer[0]=i;
-            for(double j=1;j<9;j++){
-                if(i==b) j=b;
-                else{
-                    answer[1]=j;
-                }
-                for(double k=1;k<9;k++){
-                    if(i==b) k=b;
-                    else{
-                        answer[2]=k;
-                    }                   
-                }
-            }
+        startNum=10*numLength;
+        for(int i=startNum;i<n;i++){
+            sum=i;
+            int mok=i/s
         }
-        
-        bw.close();
+
         br.close();
     }
 }
