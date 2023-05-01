@@ -6,6 +6,97 @@
     "configurations": [
         {
             "type": "java",
+            "name": "BOJ_12865",
+            "request": "launch",
+            "mainClass": "다이나믹프로그래밍.BOJ_12865",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_2108",
+            "request": "launch",
+            "mainClass": "수학.BOJ_2108",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_26069",
+            "request": "launch",
+            "mainClass": "집합과맵.BOJ_26069",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_25192",
+            "request": "launch",
+            "mainClass": "수학.BOJ_25192",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_1037",
+            "request": "launch",
+            "mainClass": "BOJ_1037",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_1010",
+            "request": "launch",
+            "mainClass": "BOJ_1010",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_2309ver2",
+            "request": "launch",
+            "mainClass": "브루트스포스.BOJ_2309ver2",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_10870",
+            "request": "launch",
+            "mainClass": "수학.BOJ_10870",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_2460",
+            "request": "launch",
+            "mainClass": "수학.BOJ_2460",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_3460",
+            "request": "launch",
+            "mainClass": "수학.BOJ_3460",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_2501",
+            "request": "launch",
+            "mainClass": "수학.BOJ_2501",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_2839",
+            "request": "launch",
+            "mainClass": "브루트스포스.BOJ_2839",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_19532",
+            "request": "launch",
+            "mainClass": "브루트스포스.BOJ_19532",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
             "name": "BOJ_2581",
             "request": "launch",
             "mainClass": "수학.BOJ_2581",

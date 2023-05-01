@@ -1,4 +1,4 @@
-package 조합론;
+
 import java.io.*;
 import java.util.*;
 public class BOJ_11050 {
