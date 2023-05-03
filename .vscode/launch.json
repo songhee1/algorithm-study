@@ -6,6 +6,55 @@
     "configurations": [
         {
             "type": "java",
+            "name": "BOJ_18258",
+            "request": "launch",
+            "mainClass": "큐.BOJ_18258",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_1874",
+            "request": "launch",
+            "mainClass": "스택.BOJ_1874",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_4949",
+            "request": "launch",
+            "mainClass": "스택.BOJ_4949",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_9012",
+            "request": "launch",
+            "mainClass": "스택.BOJ_9012",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_10773",
+            "request": "launch",
+            "mainClass": "스택.BOJ_10773",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_10828",
+            "request": "launch",
+            "mainClass": "스택.BOJ_10828",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_20920",
+            "request": "launch",
+            "mainClass": "심화2.BOJ_20920",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
             "name": "BOJ_12865",
             "request": "launch",
             "mainClass": "다이나믹프로그래밍.BOJ_12865",
