@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "BOJ_20920amend",
+            "request": "launch",
+            "mainClass": "심화2.BOJ_20920amend",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
             "name": "BOJ_2108",
             "request": "launch",
             "mainClass": "심화2.BOJ_2108",
