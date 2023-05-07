@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "BOJ_11866",
+            "request": "launch",
+            "mainClass": "스택.BOJ_11866",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_2231secondamend",
+            "request": "launch",
+            "mainClass": "브루트스포스.BOJ_2231secondamend",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
             "name": "BOJ_20920amend",
             "request": "launch",
             "mainClass": "심화2.BOJ_20920amend",

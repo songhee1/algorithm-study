@@ -9,7 +9,7 @@ public class BOJ_4949 {
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
     static char arr[];
-    static int pointer = -1;
+    static int pointer = 0;
     static String s;
 
     public static void main(String[] args) throws Exception {
@@ -33,7 +33,7 @@ public class BOJ_4949 {
     static void checkStatement() {
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
-            if (c == '(' || c == '[') {
+            if (c=='(' || c == '[') {
                 arr[pointer] = c;
                 pointer++;
             } else if (pointer != 0) {
@@ -51,11 +51,18 @@ public class BOJ_4949 {
                     return;
                 }
 
-            }else if(c==')'|| c==']'){
+            }else if(pointer==0 && (c==')'|| c==']')){
                 sb.append("no").append("\n");
                 return;
             }
 
+        }
+
+        for(char i : arr){
+            if(i!=0) {
+                sb.append("no").append("\n");
+                return;
+            }
         }
         sb.append("yes").append("\n");
         return;
