@@ -6,6 +6,41 @@
     "configurations": [
         {
             "type": "java",
+            "name": "BOJ_5430",
+            "request": "launch",
+            "mainClass": "덱.BOJ_5430",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_1021",
+            "request": "launch",
+            "mainClass": "덱.BOJ_1021",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_10866",
+            "request": "launch",
+            "mainClass": "덱.BOJ_10866",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_1966copy",
+            "request": "launch",
+            "mainClass": "스택.BOJ_1966copy",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_1966",
+            "request": "launch",
+            "mainClass": "스택.BOJ_1966",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
             "name": "BOJ_11866",
             "request": "launch",
             "mainClass": "스택.BOJ_11866",
