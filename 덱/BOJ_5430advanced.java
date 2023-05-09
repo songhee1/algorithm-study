@@ -16,7 +16,7 @@ public class BOJ_5430advanced {
 
     public static void main(String[] args) throws Exception {
         testcase = Integer.parseInt(br.readLine());
-        Deque<Integer> deque = new LinkedList<>();
+        LinkedList <Integer> list = new LinkedList<>();
 
         while (testcase-- > 0) {
             isRight = false;
@@ -30,38 +30,55 @@ public class BOJ_5430advanced {
             st = new StringTokenizer(br.readLine(), "[],");
 
             while (st.hasMoreTokens()) {
-                deque.add(Integer.parseInt(st.nextToken()));
+                list.add(Integer.parseInt(st.nextToken()));
             }
+
+            pointer = 0;
+            rearPointer = list.size();
 
             for (int i = 0; i < p.length(); i++) {
                 if (p.charAt(i) == 'R') {
                     isRight = !isRight;
+                    if(isRight == false){
+                        int tmp = pointer;
+                        pointer = rearPointer + 1;
+                        rearPointer = tmp + 1;
+
+                    }else{
+                        int tmp = pointer;
+                        pointer = rearPointer -1;
+                        rearPointer = tmp -1;
+                    }
 
                 } else if (p.charAt(i) == 'D') {
-                    if (deque.isEmpty()) {
+                    if (pointer == rearPointer) {
                         sb.append("error").append("\n");
                         flag = true;
                         break;
+                    }else{
+                        if(isRight == false){
+                            pointer ++;
+                            list.poll();
+                        }else{
+                            pointer --;
+                            list.pollLast();
+                        }
                     }
-                    if (isRight == false) {
-                        deque.pollFirst();
-                    } else {
-                        deque.pollLast();
-                    }
+                    
                 }
             }
             if (flag == false) {
                 sb.append("[");
-                if (deque.size() > 0) {
+                if (list.size() > 0) {
                     if (isRight == false) {
-                        sb.append(deque.pollFirst());
-                        while (!deque.isEmpty()) {
-                            sb.append(",").append(deque.pollFirst());
+                        sb.append(list.poll());
+                        while (!list.isEmpty()) {
+                            sb.append(",").append(list.poll());
                         }
                     } else {
-                        sb.append(deque.pollLast());
-                        while (!deque.isEmpty()) {
-                            sb.append(",").append(deque.pollLast());
+                        sb.append(list.pollLast());
+                        while (!list.isEmpty()) {
+                            sb.append(",").append(list.pollLast());
                         }
                     }
                 }

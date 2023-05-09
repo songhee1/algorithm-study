@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "BOJ_25501",
+            "request": "launch",
+            "mainClass": "재귀.BOJ_25501",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_10870",
+            "request": "launch",
+            "mainClass": "재귀.BOJ_10870",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_27433",
+            "request": "launch",
+            "mainClass": "재귀.BOJ_27433",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
             "name": "BOJ_5430advanced",
             "request": "launch",
             "mainClass": "덱.BOJ_5430advanced",
