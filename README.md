@@ -57,12 +57,15 @@ do{
 
 <br>
 <br>
-<br>
 
-### 관련된 문제
+### [관련된 문제]
 
-- [백준 음식 평론가 문제](https://www.acmicpc.net/problem/1188)
-    - 문제 풀이 코드 : 
+- [백준 2609번 최대공약수 최소공배수 문제](https://www.acmicpc.net/problem/2609)
+    - [문제 풀이 코드](https://github.com/songhee1/algorithm-study/blob/main/%ED%92%80%EA%B3%A0%EC%8B%B6%EC%9D%80%20%EB%AC%B8%EC%A0%9C/BOJ_2609.java)
+
+
+- [백준 1188번 음식 평론가 문제](https://www.acmicpc.net/problem/1188)
+    - [문제 풀이 코드](https://github.com/songhee1/algorithm-study/blob/main/%ED%92%80%EA%B3%A0%EC%8B%B6%EC%9D%80%20%EB%AC%B8%EC%A0%9C/BOJ_2609.java)
 
 ## (1) 최대공약수
 

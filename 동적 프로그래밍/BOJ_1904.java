@@ -6,7 +6,7 @@ public class BOJ_1904 {
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static StringBuilder sb = new StringBuilder();
     static int dir[];
-    static int n, order = 1;
+    static int n;
 
     public static void main(String[] args) throws Exception {
         n = Integer.parseInt(br.readLine());
@@ -16,11 +16,10 @@ public class BOJ_1904 {
         dir[2] = 2;
 
         for (int i = 3; i <= n; i++) {
-            dir[i] = dir[i - 1] + order;
-            order++;
+            dir[i] = (dir[i - 1] + dir[i-2])%15746;
         }
 
-        System.out.print(dir[n]/15746);
+        System.out.print(dir[n]);
         br.close();
     }
 }
