@@ -6,6 +6,41 @@
     "configurations": [
         {
             "type": "java",
+            "name": "BOJ_24060",
+            "request": "launch",
+            "mainClass": "정렬.BOJ_24060",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_5430try",
+            "request": "launch",
+            "mainClass": "덱.BOJ_5430try",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_1966",
+            "request": "launch",
+            "mainClass": "덱.BOJ_1966",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_11054",
+            "request": "launch",
+            "mainClass": "BOJ_11054",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_11053",
+            "request": "launch",
+            "mainClass": "BOJ_11053",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
             "name": "BOJ_2156",
             "request": "launch",
             "mainClass": "BOJ_2156",
