@@ -8,7 +8,8 @@ public class BOJ_1966 {
     static StringBuilder sb = new StringBuilder();
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static int n, m, testcase;
-    static int maxnum, idx, present;
+    static int maxnum, count;
+    static boolean isFinished;
 
     public static void main(String[] args) throws Exception {
         testcase = Integer.parseInt(br.readLine());
@@ -21,38 +22,36 @@ public class BOJ_1966 {
             n = Integer.parseInt(st.nextToken());
             m = Integer.parseInt(st.nextToken());
             maxnum = 0;
-            idx = 0;
+            count = 0;
+            isFinished = false;
 
             map.clear();
             list.clear();
 
             st = new StringTokenizer(br.readLine());
             for (int j = 0; j < n; j++) {
-                list.add(Integer.parseInt(st.nextToken()));
+                int a = Integer.parseInt(st.nextToken());
+                list.add(a);
+                map.put(a, j);
                 maxnum = Math.max(list.peek(), maxnum);
             }
 
-            map.put(m, 0);
-            present = m;
-            while (idx == 0) {
+            while (isFinished == false) {
                 if (maxnum == list.peek()) {
-                    if (present == 0) {
-                        idx = map.get(m) + 1;
-                    } else if (present > 0) {
-                        map.replace(m, map.get(m) + 1);
+                    if (map.get(list.peek()) == m) {
+                       isFinished=true;
+                       count++;
+                    } else {
+                       list.add(list.poll());
+                       count++;
                     }
-                    list.poll();
                 } else {
                     list.add(list.poll());
                 }
 
-                present--;
-                if (present < 0) {
-                    present = list.size() - 1;
-                }
             }
 
-            sb.append(idx).append("\n");
+            sb.append(count).append("\n");
         }
 
         System.out.print(sb);
