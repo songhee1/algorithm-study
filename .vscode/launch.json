@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "BOJ_1789",
+            "request": "launch",
+            "mainClass": "그리디.BOJ_1789",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_1541",
+            "request": "launch",
+            "mainClass": "그리디.BOJ_1541",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_4779",
+            "request": "launch",
+            "mainClass": "재귀.BOJ_4779",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
             "name": "BOJ_11659",
             "request": "launch",
             "mainClass": "누적합.BOJ_11659",
