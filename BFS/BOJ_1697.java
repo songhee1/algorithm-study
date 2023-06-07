@@ -34,7 +34,7 @@ public class BOJ_1697 {
         }
 
         System.out.println(arr[m]);
-    }
+    }z
 
     static void bfs() {
 
