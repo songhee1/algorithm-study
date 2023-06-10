@@ -85,8 +85,6 @@ public class BOJ_7576 {
                     visited[nowX][nowY] = true;
                     queue.add(new Pair(nowX, nowY));
                     
-
-
                     
                     distance[nowX][nowY] = distance[pair.x][pair.y] + 1;
                 }
