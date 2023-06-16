@@ -7,6 +7,14 @@ public class BOJ_2622 {
     static boolean visited[][][];
     static StringBuilder sb = new StringBuilder();
 
+    /*
+     * 비선형구조의 알고리즘
+     * 
+     * 재귀로 +1을해서 들어가기때문에 1000이상의 큰 n에 대해서는 시간초과 or 메모리초과가 난다.
+     * 따라서 다른 방법 생각해야한다.
+     * 
+     */
+
     public static void main(String[] args) throws Exception {
         n = Integer.parseInt(br.readLine());
 

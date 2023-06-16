@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "BOJ_2615study",
+            "request": "launch",
+            "mainClass": "BOJ_2615study",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_2615",
+            "request": "launch",
+            "mainClass": "BOJ_2615",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_121",
+            "request": "launch",
+            "mainClass": "BOJ_121",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
             "name": "BOJ_2622rewrite",
             "request": "launch",
             "mainClass": "BOJ_2622rewrite",
