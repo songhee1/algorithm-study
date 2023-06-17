@@ -1,107 +1,61 @@
 import java.io.*;
 import java.util.*;
 
-class Pair {
-    int x;
-    int y;
-
-    Pair(int x, int y) {
-        this.x = x;
-        this.y = y;
-    }
-}
-
 public class BOJ_2615 {
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static StringTokenizer st;
     static StringBuilder sb = new StringBuilder();
-    static int arr[][];
-    static boolean isvisited[][];
-    static int distance[][];
-    static int dirX[] = { 1, 0, -1, 0, 1, 1, -1, -1 };
-    static int dirY[] = { 0, 1, 0, -1, 1, -1, 1, -1 };
-    static int blacknum, whitenum;
-    static int lastX,lastY; 
-    static Queue<Pair> queue = new LinkedList<>();
+    static int arr[][], memo[][][];
+    static int dirX[] = { -1, 0, 1, 1 };
+    static int dirY[] = { 1, 1, 1, 0 };
+
+    /*
+     * 오목의 상태를 저장하는 배열 arr[][]와 오목이 방향에 따라서 같은 색을 가진 배열일 경우 1을 증가시키는 배열 memo[][]를 지정합니다.
+     * 
+     * 세로 1열부터 19열까지/ 가로 1열부터 19열까지 반복하며 위->아래(오목이 일렬로 만들어진 경우), 아래 좌-> 위 우(오른쪽 대각선 위를 향하는 오목일 경우),
+     * 위 좌->아래 우(오른쪽 대각선 아래를 향하는 오목일 경우), 좌->우(오목이 가로로 일렬인 경우) 이 네가지 방향을 dirX, dirY 배열에 작성합니다.
+     * 
+     * 가장 먼저 오목이 안그려진 바둑알을 찾아야하므로 memo[][]=0인지 확인 & 총 5개인지 확인 합니다. calc함수
+     * 
+     * calc함수는 dir, 색 파라미터를 받아서 동일한 색과 방향인지 확인해서 계속해서 1을 더하고 5가 되면 리턴됩니다.  
+     */
 
     public static void main(String[] args) throws Exception {
-        arr = new int[19][19];
-        isvisited = new boolean[19][19];
-        distance = new int[19][19];
+        arr = new int[25][25];
+        memo = new int[25][25][4];
 
-        for (int i = 0; i < 19; i++) {
+        for (int i = 1; i <= 19; i++) {
             st = new StringTokenizer(br.readLine());
-            for (int j = 0; j < 19; j++) {
+            for (int j = 1; j <= 19; j++) {
                 arr[i][j] = Integer.parseInt(st.nextToken());
             }
         }
+        
+         for (int j = 1; j <= 19; j++) {
+            for (int i = 1; i <= 19; i++) {
+                if (arr[i][j] != 0) {
+                    for (int dir = 0; dir < 4; dir++) {
 
-        for (int i = 0; i < 19; i++) {
-            for (int j = 0; j < 19; j++) {
-                if (arr[i][j] == 1 && isvisited[i][j] == false) {
-                    distance[i][j] = 1;
-                    isvisited[i][j] = true;
-                    queue.add(new Pair(i, j));
-                    bfs();
-                }
-                if (arr[i][j] == 2 && isvisited[i][j] == false) {
-                    distance[i][j] = 1;
-                    isvisited[i][j] = true;
-                    queue.add(new Pair(i, j));
-                    bfs();
+                        if (memo[i][j][dir] == 0 && calc(i, j, dir, arr[i][j]) == 5) {
+                            sb.append(arr[i][j]).append("\n").append(i).append( " ").append( j).append("\n");
+                        }
+                    }
                 }
             }
         }
-
-        sb.append(blacknum).append(", ").append(whitenum).append("\n");
-        if (blacknum > whitenum) {
-            sb.append(1).append("\n");
-        } else if (blacknum == whitenum) {
-            sb.append(0).append("\n");
-        } else if (blacknum < whitenum) {
-            sb.append(2).append("\n");
-        }
-
-        if (blacknum != whitenum) {
-            sb.append(lastX-4+1).append(" ").append(lastY-4+1);
-        }
-
         System.out.println(sb);
+        
+
     }
 
-    static void bfs() {
-        while (!queue.isEmpty()) {
-            Pair pair = queue.poll();
-            for (int i = 0; i < dirX.length; i++) {
-                int nowX = dirX[i] + pair.x;
-                int nowY = dirY[i] + pair.y;
 
-
-                if (nowX < 0 || nowX >= 19 || nowY < 0 || nowY >= 19)
-                    continue;
-
-                if(isvisited[nowX][nowY] == true && arr[nowX][nowY] != arr[pair.x][pair.y]){
-
-                }
-                if (isvisited[nowX][nowY] == false && arr[nowX][nowY] == arr[pair.x][pair.y]) {
-                    isvisited[nowX][nowY] = true;
-                    queue.add(new Pair(nowX, nowY));
-                    distance[nowX][nowY] = distance[pair.x][pair.y] + 1;
-
-                }
-
-                if (distance[nowX][nowY] == 5) {
-                    if (arr[pair.x][pair.y] == 1) {
-                        blacknum++;
-                    } else if (arr[pair.x][pair.y] == 2) {
-                        whitenum++;
-                    }
-
-                    lastX = nowX;
-                    lastY = nowY;
-                    return;
-                }
-            }
+    private static int calc(int i, int j, int dir, int color) {
+        int nx = i + dirX[dir];
+        int ny = j + dirY[dir];
+        
+        if (arr[nx][ny] == color) {
+            return memo[nx][ny][dir] = calc(nx, ny, dir, color) + 1;
         }
+        return 1;
     }
 }
