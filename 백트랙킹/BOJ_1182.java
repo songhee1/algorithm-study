@@ -10,7 +10,7 @@ public class BOJ_1182 {
     static List<Integer> list = new LinkedList<>();
     static int arr[];
     static boolean visit[];
-    static int objectnum = 1, prior;
+    static int objectnum = 1, prior, toprior;
 
     public static void main(String[] args) throws Exception {
         st = new StringTokenizer(br.readLine());
@@ -19,7 +19,7 @@ public class BOJ_1182 {
         s = Integer.parseInt(st.nextToken());
 
         arr = new int[n];
-        visit = new boolean[2000005];
+        visit = new boolean[5000005];
 
         st = new StringTokenizer(br.readLine());
         for (int i = 0; i < n; i++) {
@@ -28,6 +28,7 @@ public class BOJ_1182 {
 
         for (objectnum = 1; objectnum <= n; objectnum++) {
             backTracking(0);
+            toprior = 0;
         }
 
         System.out.println(prior);
@@ -40,20 +41,20 @@ public class BOJ_1182 {
                 sum += list.get(i);
             }
             if (sum == s) {
-
                 prior++;
             }
             return;
         }
 
         for (int i = 0; i < n; i++) {
-            if (visit[arr[i] + 1000000] == false) {
-                if (count == 0 || (count > 0 && list.get(count - 1) <= arr[i])) {
-                    visit[arr[i] + 1000000] = true;
+            if (visit[arr[i] + 1000000+i] == false) {
+                if (count == 0 || (count > 0 && toprior<i)) {
+                    visit[arr[i] + 1000000+i] = true;
                     list.add(arr[i]);
+                    toprior = i;
                     backTracking(count + 1);
                     list.remove(count);
-                    visit[arr[i] + 1000000] = false;
+                    visit[arr[i] + 1000000+i] = false;
                 }
             }
         }
