@@ -6,6 +6,62 @@
     "configurations": [
         {
             "type": "java",
+            "name": "BOJ_1182",
+            "request": "launch",
+            "mainClass": "백트랙킹.BOJ_1182",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_15649",
+            "request": "launch",
+            "mainClass": "백트랙킹.BOJ_15649",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_fire",
+            "request": "launch",
+            "mainClass": "BFS.BOJ_fire",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_5427",
+            "request": "launch",
+            "mainClass": "BFS.BOJ_5427",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "Pair",
+            "request": "launch",
+            "mainClass": "BFS.Pair",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_4179",
+            "request": "launch",
+            "mainClass": "BFS.BOJ_4179",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_4963",
+            "request": "launch",
+            "mainClass": "BFS.BOJ_4963",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
+            "name": "BOJ_10971",
+            "request": "launch",
+            "mainClass": "BOJ_10971",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
             "name": "BOJ_1753",
             "request": "launch",
             "mainClass": "BOJ_1753",

@@ -13,7 +13,6 @@ class Node {
 
 public class BOJ_1753 {
     static int V, E; // 정점의 갯수, 간선의 갯수
-    static int k; // 시작 정점의 번호(1<=k<=v)
     static int u, v, w; // 정점 u, 정점 v, 가중치 w(1<=u,v<=10)
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static StringTokenizer st;
@@ -25,8 +24,6 @@ public class BOJ_1753 {
         st = new StringTokenizer(br.readLine());
         V = Integer.parseInt(st.nextToken());
         E = Integer.parseInt(st.nextToken());
-
-        k = Integer.parseInt(br.readLine());
 
         ArrayList<ArrayList<Node>> graph = new ArrayList<>();
         dist = new int[V + 1];
@@ -48,7 +45,7 @@ public class BOJ_1753 {
         for (int i = 1; i < V + 1; i++) {
             dist[i] = Integer.MAX_VALUE;
         }
-        dist[k] = 0;
+        dist[1] = 0;
 
         for (int i = 0; i < V; i++) {
             int nodeValue = Integer.MAX_VALUE;
@@ -73,14 +70,6 @@ public class BOJ_1753 {
 
         }
 
-        for (int i = 1; i < V + 1; i++) {
-            if (dist[i] == Integer.MAX_VALUE) {
-                sb.append("INF").append("\n");
-            } else {
-                sb.append(dist[i]).append("\n");
-
-            }
-        }
-        System.out.println(sb);
+        System.out.println(dist[7]);
     }
 }
