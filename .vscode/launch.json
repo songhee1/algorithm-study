@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "BOJ_11725",
+            "request": "launch",
+            "mainClass": "백트랙킹.BOJ_11725",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
             "name": "BOJ_1759",
             "request": "launch",
             "mainClass": "백트랙킹.BOJ_1759",
