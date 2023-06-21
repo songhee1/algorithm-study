@@ -7,13 +7,11 @@ public class BOJ_2644 {
     static int n; //전체 사람수
     static int arrayA, arrayB; //관계 촌수 계산해야할 번호 
     static int m; //관계 수
-    static Queue<Integer> queue = new LinkedList<>();
     static StringTokenizer st;
     static StringBuilder sb = new StringBuilder();
     static boolean visit[];
-    static boolean flag;
-    static int arr[];
     static List<Integer> list = new ArrayList<>();
+    static int count = -1;
     public static void main(String[] args) throws Exception {
         n = Integer.parseInt(br.readLine());
 
@@ -21,10 +19,10 @@ public class BOJ_2644 {
         arrayA = Integer.parseInt(st.nextToken());
         arrayB = Integer.parseInt(st.nextToken());
 
-        arr = new int[n+1];
-
         m = Integer.parseInt(br.readLine());
         graph = new ArrayList[n+1];
+
+        visit = new boolean[n+1];
 
 
         for(int i=0;i<=n;i++){
@@ -38,40 +36,30 @@ public class BOJ_2644 {
             int b= Integer.parseInt(st.nextToken());
 
             graph[a].add(b);
-            if(flag == false){
-                queue.add(a);
-                arr[a] = 0;
-                flag=true;
-            }
-            list.add(a);
             graph[b].add(a);
         }
 
-        bfs(0);
-        i
+        visit[arrayA] = true;
+        dfs(arrayA, arrayB, count);
+        if(count == -1){
+            System.out.println(count);
+        }else{
+            System.out.println(count+1);
+        }
 
-        for(int i=1;i<=m;i++){
-            if(visit[i] == false){
-                for(int num : list){
-                    if(num == i){
-                        queue.add(i);
-                        bfs(0);
-                        arr[i] = 0;
-                    }
-                }
+    }
+    static void dfs(int start, int end, int nums){
+        if(start == end){
+            count = nums;
+        }
+
+        for(int i=0;i<graph[start].size();i++){
+            int a = graph[start].get(i);
+            if(visit[a] == false){
+                visit[a]  = true;
+                dfs(a, end, nums+1);
             }
         }
-    }
-    static void bfs(int count){
-        while(!queue.isEmpty()){
-            int a = queue.poll();
-            
-            for(int i=0;i<graph[a].size();i++){
-                if(visit[i] == false){
-                    visit[i] = true;
-                    arr[i] = ++count;
-                }
-            }
-        }
-    }
+
+    }  
 }
