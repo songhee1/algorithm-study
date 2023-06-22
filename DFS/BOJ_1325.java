@@ -20,61 +20,63 @@ public class BOJ_1325 {
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static int n, m, count, maxNum;
     static boolean visit[];
-    static Map<Integer, Integer> map = new HashMap<>();
-    static List<Integer> list = new ArrayList<>();
-    static List<Integer>[] graph;
-    static List<Integer> arrList = new ArrayList<>();
+    static ArrayList<Integer>[] list;
+    static int result[];
+    /**
+     * 3->1
+     * 3->2
+     * 4->3
+     * 5->3
+     * @param args
+     * @throws Exception
+     */
 
     public static void main(String[] args) throws Exception {
         st = new StringTokenizer(br.readLine());
         n = Integer.parseInt(st.nextToken());
         m = Integer.parseInt(st.nextToken());
 
-        graph = new ArrayList[n + 1];
+        result = new int[n + 1];
+        list = new ArrayList[n+1];
 
-        for (int i = 0; i < n + 1; i++) {
-            graph[i] = new ArrayList<>();
+        for(int i=1;i<=n;i++){
+            list[i]=new ArrayList<>();
         }
 
         while (m-- > 0) {
             st = new StringTokenizer(br.readLine());
             int a = Integer.parseInt(st.nextToken());
             int b = Integer.parseInt(st.nextToken());
-            graph[b].add(a);
-            list.add(b);
+            list[a].add(b);
         }
 
-        for (int i = 0; i < list.size(); i++) {
+        for (int i = 1; i <= n; i++) {
             visit = new boolean[n + 1];
             count = 0;
             DFS(i);
-            maxNum = Math.max(maxNum, count);
-            map.put(i, count);
-
         }
 
-        for (int key : map.keySet()) {
-            if (map.get(key) == maxNum) {
-                arrList.add(key);
+        int maxNum=0;
+        for(int i=1;i<=n;i++){
+           maxNum = Math.max(result[i], maxNum);
+        }
+
+        for(int i=1;i<=n;i++){
+            if(maxNum == result[i]){
+                sb.append(i).append(" ");
             }
         }
 
-        Collections.sort(arrList);
-
-        for (Integer a : arrList) {
-            sb.append(a).append(" ");
-        }
-
         System.out.println(sb);
-
     }
 
     static void DFS(int ancestor) {
         visit[ancestor] = true;
-         for (int i = 0; i < graph[ancestor].size(); i++) {
-            int a = graph[ancestor].get(i);
+        for (int i = 0; i < list[ancestor].size(); i++) {
+            int a = list[ancestor].get(i);
             if (visit[a] == false) {
-                count++;
+                result[a]++;
+                visit[a] = true;
                 DFS(a);
             }
         }

@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "BOJ_1388",
+            "request": "launch",
+            "mainClass": "DFS.BOJ_1388",
+            "projectName": "algorithm-study_d4dee814"
+        },
+        {
+            "type": "java",
             "name": "BOJ_1325",
             "request": "launch",
             "mainClass": "DFS.BOJ_1325",
