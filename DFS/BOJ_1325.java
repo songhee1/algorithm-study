@@ -32,42 +32,45 @@ public class BOJ_1325 {
      */
 
     public static void main(String[] args) throws Exception {
-        st = new StringTokenizer(br.readLine());
-        n = Integer.parseInt(st.nextToken());
-        m = Integer.parseInt(st.nextToken());
+        // st = new StringTokenizer(br.readLine());
+        // n = Integer.parseInt(st.nextToken());
+        // m = Integer.parseInt(st.nextToken());
 
-        result = new int[n + 1];
-        list = new ArrayList[n+1];
+        // result = new int[n + 1];
+        // list = new ArrayList[n+1];
 
-        for(int i=1;i<=n;i++){
-            list[i]=new ArrayList<>();
-        }
+        // for(int i=1;i<=n;i++){
+        //     list[i]=new ArrayList<>();
+        // }
 
-        while (m-- > 0) {
-            st = new StringTokenizer(br.readLine());
-            int a = Integer.parseInt(st.nextToken());
-            int b = Integer.parseInt(st.nextToken());
-            list[a].add(b);
-        }
+        int n = 7.5;
+        System.out.println(n);
 
-        for (int i = 1; i <= n; i++) {
-            visit = new boolean[n + 1];
-            count = 0;
-            DFS(i);
-        }
+        // while (m-- > 0) {
+        //     st = new StringTokenizer(br.readLine());
+        //     int a = Integer.parseInt(st.nextToken());
+        //     int b = Integer.parseInt(st.nextToken());
+        //     list[a].add(b);
+        // }
 
-        int maxNum=0;
-        for(int i=1;i<=n;i++){
-           maxNum = Math.max(result[i], maxNum);
-        }
+        // for (int i = 1; i <= n; i++) {
+        //     visit = new boolean[n + 1];
+        //     count = 0;
+        //     DFS(i);
+        // }
 
-        for(int i=1;i<=n;i++){
-            if(maxNum == result[i]){
-                sb.append(i).append(" ");
-            }
-        }
+        // int maxNum=0;
+        // for(int i=1;i<=n;i++){
+        //    maxNum = Math.max(result[i], maxNum);
+        // }
 
-        System.out.println(sb);
+        // for(int i=1;i<=n;i++){
+        //     if(maxNum == result[i]){
+        //         sb.append(i).append(" ");
+        //     }
+        // }
+
+        // System.out.println(sb);
     }
 
     static void DFS(int ancestor) {
