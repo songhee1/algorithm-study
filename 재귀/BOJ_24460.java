@@ -15,34 +15,38 @@ public class BOJ_24460 {
 
     public static void main(String[] args) throws Exception {
         n = Integer.parseInt(br.readLine());
-        arr = new int[n][n];
 
-        for (int i = 0; i < n; i++) {
-            st = new StringTokenizer(br.readLine());
-            for (int j = 0; j < n; j++) {
-                arr[i][j] = Integer.parseInt(st.nextToken());
+        if (n == 0) {
+            arr = new int[1][1];
+            arr[0][0] = Integer.parseInt(br.readLine());
+            System.out.println(arr[0][0]);
+        } else {
+            arr = new int[n][n];
+            for (int i = 0; i < n; i++) {
+                st = new StringTokenizer(br.readLine());
+                for (int j = 0; j < n; j++) {
+                    arr[i][j] = Integer.parseInt(st.nextToken());
+                }
             }
+
+            special(0, 0, n);
+
+            Collections.sort(minList);
+            if (minList.size() == 1) {
+                System.out.println(minList.get(0));
+            } else
+                System.out.println(minList.get(1));
+
         }
 
-        special(0, n-1, 0, n-1);
-
-        Collections.sort(minList);
-        if (minList.size() == 1)
-            System.out.println(minList.get(0));
-        else {
-            for(int a : minList){
-                // System.out.println(a);
-            }
-            System.out.println(minList.get(1));
-        }
     }
 
-    static void special(int startX, int endX, int startY, int endY) {
-        if (endX - startX == 1) {
+    static void special(int row, int col, int size) {
+        if (size == 2) {
             List<Integer> list = new LinkedList<>();
-            // System.out.println("start: "+start+", end:"+end);
-            for (int i = startX; i <= endX; i++) {
-                for (int j = startY; j <= endY; j++) {
+
+            for (int i = row; i < row + size; i++) {
+                for (int j = col; j < col + size; j++) {
                     list.add(arr[i][j]);
                 }
             }
@@ -53,10 +57,11 @@ public class BOJ_24460 {
             return;
         }
 
-        special(startX, endX / 2, startY, endY/2);
-        special(endX/2+1, endX, startY, endY/2 );
-        special(startX, endX / 2, endY/2+1, endY);
-        special(endX/2+1, endX,endY/2+1, endY);
+        int newSize = size / 2;
+        special(row, col + newSize, newSize);
+        special(row, col, newSize);
+        special(row + newSize, col, newSize);
+        special(row + newSize, col + newSize, newSize);
 
     }
 }
