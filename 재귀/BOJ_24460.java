@@ -29,21 +29,19 @@ public class BOJ_24460 {
                 }
             }
 
-            special(0, 0, n);
-
-            Collections.sort(minList);
-            if (minList.size() == 1) {
-                System.out.println(minList.get(0));
+            if (n == 1) {
+                System.out.println(arr[0][0]);
             } else
-                System.out.println(minList.get(1));
+                System.out.println(special(0, 0, n));
 
         }
 
     }
 
-    static void special(int row, int col, int size) {
+    static int special(int row, int col, int size) {
+        List<Integer> list = new LinkedList<>();
+
         if (size == 2) {
-            List<Integer> list = new LinkedList<>();
 
             for (int i = row; i < row + size; i++) {
                 for (int j = col; j < col + size; j++) {
@@ -51,17 +49,18 @@ public class BOJ_24460 {
                 }
             }
             Collections.sort(list);
-            minNum = list.get(1);
-            minList.add(minNum);
+            return list.get(1);
+        } else {
 
-            return;
+            int newSize = size / 2;
+            list.add(special(row, col + newSize, newSize));
+            list.add(special(row, col, newSize));
+            list.add(special(row + newSize, col, newSize));
+            list.add(special(row + newSize, col + newSize, newSize));
+
+            Collections.sort(list);
+            return list.get(1);
         }
-
-        int newSize = size / 2;
-        special(row, col + newSize, newSize);
-        special(row, col, newSize);
-        special(row + newSize, col, newSize);
-        special(row + newSize, col + newSize, newSize);
 
     }
 }

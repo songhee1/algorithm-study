@@ -1,6 +1,6 @@
 import java.io.*;
 import java.util.*;
-public class BOJ_1914{
+public class BOJ_11729{
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static StringBuilder sb = new StringBuilder();
     static int n, count;
