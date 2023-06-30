@@ -32,13 +32,8 @@ public class BOJ_10997 {
     }
 
     static void find(int rowsize, int colsize, int row, int col) {
-        if (colsize <= 3) {
-            for (int i = col; i < col + 3; i++) {
-                arr[row][i] = '*';
-            }
-            for (int i = row; i < row + 3; i++) {
-                arr[i][col] = '*';
-            }
+        if (colsize <= 0) {
+            arr[row][col]='*';
             return;
         } else {
             find(rowsize - 4, colsize - 4, row + 2, col + 2);
