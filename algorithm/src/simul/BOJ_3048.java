@@ -13,6 +13,7 @@ public class BOJ_3048 {
 		Ant(char val, int dir){
 			this.val=val;
 			this.dir=dir;
+			
 		}
 	}
 	

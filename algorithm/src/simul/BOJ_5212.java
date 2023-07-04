@@ -22,6 +22,7 @@ public class BOJ_5212 {
 		Pair(int x, int y){
 			this.x=x;
 			this.y=y;
+			
 		}
 	}
 	
