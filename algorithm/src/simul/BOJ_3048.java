@@ -1,4 +1,4 @@
-package simulation;
+package simul;
 import java.io.*;
 import java.util.*;
 public class BOJ_3048 {
