@@ -1,0 +1,62 @@
+package com.day01.array;
+import java.io.*;
+import java.util.*;
+public class SW_1954 {
+	//                         북, 동,남,서
+	public static int dirX[]= {-1,0,1,0};
+	public static int dirY[]= {0, 1,0,-1};
+	public static int testcase;
+	public static StringBuilder sb = new StringBuilder();
+	public static int arr[][], count;
+	public static BufferedReader br= new BufferedReader(new InputStreamReader(System.in));
+	public static void main(String[] args) throws Exception {
+		testcase = Integer.parseInt(br.readLine());
+		
+		for(int i=1;i<testcase+1;i++) {
+			int num = Integer.parseInt(br.readLine());
+			
+			arr = new int[num][num];
+			int x = 0;
+			int y = 0;
+			int dir = 1;
+			for(int j=1;j<=num*num;j++) {
+				
+			    if(j == num*num) {
+			    	arr[x][y] = j;
+			    	
+			    	break;
+			    }
+			    else {
+			    	arr[x][y] = j;
+			    }
+			    
+			    
+			    
+			    if(x+dirX[dir]>=num || y+dirY[dir]>=num || x+dirX[dir]<0 || y+dirY[dir]<0 || arr[x+dirX[dir]][y+dirY[dir]] != 0) {
+				    if(dir == 3) {
+						dir = 0;
+					}else {
+						dir += 1;
+					}
+				    
+			    }
+			    x+= dirX[dir];
+			    y+= dirY[dir];
+			    
+			}
+			
+			sb.append("#"+i).append("\n");
+			for(int j=0;j<num;j++) {
+				for(int k=0;k<num;k++) {
+					sb.append(arr[j][k]).append(" ");
+				}
+				sb.append("\n");
+			}
+			
+			
+		}
+		
+		System.out.println(sb);
+	}
+
+}
