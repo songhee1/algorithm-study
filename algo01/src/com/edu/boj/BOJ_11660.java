@@ -35,8 +35,8 @@ public class BOJ_11660 {
 		for(int i=1;i<=n;i++) {
 			st = new StringTokenizer(br.readLine());
 			for(int j=1;j<=n;j++) {
-				total += Integer.parseInt(st.nextToken());
-				arr[i][j] = total;
+				int a = Integer.parseInt(st.nextToken());
+				arr[i][j] = arr[i-1][j]+arr[i][j-1]-arr[i-1][j-1]+a;
 			}
 		}
 		
