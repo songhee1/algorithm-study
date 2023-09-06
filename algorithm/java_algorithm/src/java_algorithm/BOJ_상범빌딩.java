@@ -14,6 +14,7 @@ class Pair{
 public class BOJ_상범빌딩 {
 	public static List<char[][]> list = new LinkedList<>();
 	public static int[][][] dlist;
+	public static int minE = Integer.MAX_VALUE;
 	public static Queue<Pair> q = new LinkedList<>();
 	public static int L, R, C;
 	public static StringBuilder sb = new StringBuilder();
@@ -24,6 +25,7 @@ public class BOJ_상범빌딩 {
 		
 		Scanner sc = new Scanner(System.in);
 		while(true) {
+			minE = Integer.MAX_VALUE;
 			StringTokenizer st = new StringTokenizer(br.readLine());
 			L = Integer.parseInt(st.nextToken());
 			R = Integer.parseInt(st.nextToken());
@@ -39,11 +41,11 @@ public class BOJ_상범빌딩 {
 					di[i][j] = '#';
 				}
 			}
+
+			list.add(di);
 			
 			dlist = new int[L+2][R][C];
 			
-			Pair end = null;
-			list.add(di);
 			
 			for(int h = 1;h<=L;h++) {
 				char [][]arr = new char[R][C];
@@ -85,10 +87,12 @@ public class BOJ_상범빌딩 {
 //			}
 			
 			q.clear();
-			if(dlist[end.floor][end.x][end.y] == 0) {
+			
+			
+			if(minE == Integer.MAX_VALUE) {
 				sb.append("Trapped!").append("\n");
 			}else {
-				sb.append("Escaped in "+dlist[end.floor][end.x][end.y]
+				sb.append("Escaped in "+minE
 						+" minute(s).").append("\n");
 			}
 		}
@@ -103,12 +107,22 @@ public class BOJ_상범빌딩 {
 					&& list.get(p.floor-1)[p.x][p.y] != '#') {
 				dlist[p.floor-1][p.x][p.y] = dlist[p.floor][p.x][p.y] + 1;
 				q.add(new Pair(p.floor-1, p.x, p.y));
+				
+				if(list.get(p.floor-1)[p.x][p.y] == 'E') {
+					minE = Math.min(dlist[p.floor-1][p.x][p.y], minE);
+					return;
+				}
 			}
 			
 			if(dlist[p.floor+1][p.x][p.y] == 0 
 					&& list.get(p.floor+1)[p.x][p.y] != '#') {
 				dlist[p.floor+1][p.x][p.y] = dlist[p.floor][p.x][p.y] + 1;
 				q.add(new Pair(p.floor+1, p.x, p.y));
+				
+				if(list.get(p.floor+1)[p.x][p.y] == 'E') {
+					minE = Math.min(dlist[p.floor+1][p.x][p.y], minE);
+					return;
+				}
 			}
 			
 			for(int dir = 0;dir<4;dir++) {
@@ -124,6 +138,7 @@ public class BOJ_상범빌딩 {
 					q.add(new Pair(p.floor, nx, ny));
 					
 					if(list.get(p.floor)[nx][ny] == 'E') {
+						minE = Math.min(dlist[p.floor][nx][ny], minE);
 						return;
 					}
 				}
