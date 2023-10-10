@@ -1,0 +1,111 @@
+import java.io.*;
+import java.util.*;
+
+class Solution {
+    static class Task{
+        private String name;
+        private int start;
+        private int playTime;
+
+        Task(String name, int start, int playTime){
+            this.name = name;
+            this.start = start;
+            this.playTime = playTime;
+        }
+        
+        Task(String name, int playTime){
+            this.name = name;
+            this.playTime = playTime;
+        }
+}
+    public List<String> solution(String[][] plans) {
+        List<String> answer = new ArrayList<>();
+        
+        PriorityQueue<Task> pq = new PriorityQueue<>(
+        (o1, o2)-> (o1.start-o2.start));
+        
+        for(int i=0;i<plans.length;i++){
+            String name = plans[i][0];
+            String []time = plans[i][1].split(":");
+            int []time_int = new int[2];
+            time_int[0] = Integer.parseInt(time[0]);
+            time_int[1] = Integer.parseInt(time[1]);
+            
+            int targetTime = time_int[0] + time_int[1];
+            
+            int playTime = Integer.parseInt(plans[i][2]);
+            
+            pq.add(new Task(name, targetTime, playTime));
+        }
+        
+        Stack <Task>s = new Stack<>();
+        
+        while(!pq.isEmpty()){
+            Task t = pq.poll();
+            int curTime = t.start;
+            int curPlayTime = t.playTime;
+            
+            //새로운 과제가 남은 경우
+            if(!pq.isEmpty()){
+                Task newTask = pq.peek();
+                int nextStart = newTask.start;
+                
+                //다음 과제시간 전에 과제를 하고도 시간이 남는 경우
+                if(nextStart > curTime + curPlayTime){
+                    curTime += curPlayTime;
+                    answer.add(t.name);
+                    
+                    //멈춰둔 과제가 있는 경우
+                    while(!s.isEmpty()){
+                        
+                        Task remainTask = s.pop();
+                        int remainPlayTime = remainTask.playTime;
+                        
+                        //멈춰둔 과제를 충분히 할 시간이 있는 경우
+                        if(nextStart >= curTime + remainPlayTime){
+                            answer.add(remainTask.name);
+                            curTime += remainPlayTime;
+                            continue;
+                        }
+                        //멈춰둔 과제를 할 시간이 충분하지 않은 경우
+                        else{
+                            int cha = nextStart  - curTime;
+                            s.push(new Task(remainTask.name, remainPlayTime-cha));
+                            break;
+                        }
+                    }
+                    
+                //다음 과제시간 전까지 과제를 하면 시간이 딱 맞는 경우
+                }else if(nextStart == curTime + curPlayTime){
+                    answer.add(t.name);
+                    continue;
+                }
+                //다음 과제시간 전까지 과제를 모두 못끝내는 경우
+                else{
+                    int cha = nextStart - curTime;
+                    s.push(new Task(t.name, curPlayTime-cha));
+                }
+            }
+            //앞으로 새로운 과제가 없는 경우
+            else{
+                //멈춰둔 과제가 없는 경우
+                if(s.isEmpty()){
+                   answer.add(t.name);
+                   curTime += curPlayTime;
+                }
+                //멈춰둔 과제가 있는 경우
+                else{
+                    answer.add(t.name);
+                    
+                    while(!s.isEmpty()){
+                        Task remainTask = s.pop();
+                        answer.add(remainTask.name);
+                    }
+                }
+            }
+        }
+       
+        
+        return answer;
+    }
+}
