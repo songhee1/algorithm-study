@@ -9,39 +9,32 @@ class Solution{
 		StringTokenizer st;
 		
 		int n = Integer.parseInt(br.readLine());
-		dp = new long[1001];
 		arr = new int[n];
+		dp = new long[n];
 		
 		st = new StringTokenizer(br.readLine(), " ");
+		
 		for(int i=0;i<n;i++) {
 			arr[i] = Integer.parseInt(st.nextToken());
+			dp[i] = arr[i];
 		}
 		
-		dp[0] = arr[0];
-		maxSum = dp[0];
-		for(int i=1;i<n;i++) {
-			if(arr[i-1]<arr[i]) {
-				dp[i] = dp[i-1]+arr[i];
-			}else if(arr[i-1]>arr[i]){
-				dp[i] = find(i-1, i) + arr[i];
-			}else 
-				dp[i] = arr[i];
-			
-			maxSum = Math.max(maxSum, dp[i]);
+		for(int i=0;i<n;i++) {
+			for(int j=i;j>=0;j--) {
+				if(arr[j]<arr[i]) {
+					dp[i] = Math.max(dp[i], arr[i]+dp[j]);
+				}
+			}
+		}
+		
+		long maxSum = 0;
+		for(int i=0;i<n;i++) {
+			if(maxSum < dp[i]) {
+				maxSum = dp[i];
+			}
 		}
 		
 		System.out.println(maxSum);
 		
 	}
-	public static long find(int idx, int target) {
-		for(int i=idx;i>=0;i--) {
-			if(arr[target]>arr[i]) {
-				return dp[i];
-			}
-		}
-		
-		return 0;
-		
-	}
-	
 }
