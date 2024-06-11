@@ -6,7 +6,7 @@ public class Main {
         int start;
         int end;
         int dist;
-        Shortcut(int start, int end, int dist){
+        Road(int start, int end, int dist){
             this.start = start;
             this.end = end;
             this.dist = dist;
