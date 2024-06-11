@@ -26,11 +26,11 @@ public class Main {
             if (end > D)
                 continue;
             if (end - start > dist)
-                path.add(new Shortcut(start, end, dist));
+                path.add(new Road(start, end, dist));
         }
 
-        Collections.sort(path, new Comparator<Shortcut>() {
-            public int compare(Shortcut o1, Shortcut o2) {
+        Collections.sort(path, new Comparator<Road>() {
+            public int compare(Road o1, Road o2) {
                 if (o1.start == o2.start){
                     return Integer.compare(o1.end, o2.end);
                 }  
