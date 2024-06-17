@@ -37,8 +37,18 @@ class Solution5 {
 		
 		//괄호 있는 경우
 		if(opIndex+1<op.size()) {
-			int res = calcul(op.get(opIndex+1), num.get(opIndex+1), num.get(opIndex+2));
-			
+			int res1 = calcul(op.get(opIndex+1), num.get(opIndex+1), num.get(opIndex+2));
+			int res2 = calcul(op.get(opIndex), result, res1);
+			dfs(opIndex+2, res2);
+		}
+	}
+	private static int calcul(char op, int num1, int num2) {
+		if(op == '+') {
+			return num1+num2;
+		}else if(op == '-') {
+			return num1-num2;
+		}else {
+			return num1*num2;
 		}
 	}
 	
